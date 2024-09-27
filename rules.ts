@@ -38,21 +38,21 @@ const rules: KarabinerRules[] = [
         ],
         type: "basic",
       },
-      //      {
-      //        type: "basic",
-      //        description: "Disable CMD + Tab to force Hyper Key usage",
-      //        from: {
-      //          key_code: "tab",
-      //          modifiers: {
-      //            mandatory: ["left_command"],
-      //          },
-      //        },
-      //        to: [
-      //          {
-      //            key_code: "tab",
-      //          },
-      //        ],
-      //      },
+           {
+             type: "basic",
+             description: "Disable CMD + Tab to force Hyper Key usage",
+             from: {
+               key_code: "tab",
+               modifiers: {
+                 mandatory: ["left_command"],
+               },
+             },
+             to: [
+               {
+                 key_code: "tab",
+               },
+             ],
+           },
     ],
   },
   ...createHyperSubLayers({
@@ -71,33 +71,16 @@ const rules: KarabinerRules[] = [
     },
     // o = "Open" applications
     o: {
-      1: app("1Password"),
-      g: app("Google Chrome"),
-      c: app("Notion Calendar"),
-      v: app("Zed"),
-      d: app("Discord"),
-      s: app("Slack"),
-      e: app("Superhuman"),
-      n: app("Notion"),
+      b: app("Brave Browser"),
+      c: app("Calendar"),
+      v: app("Visual Studio Code"),
+      g: app("ChatGPT"),
+      r: app("Reminders"),
+      n: app("Notes"),
       t: app("Terminal"),
       // Open todo list managed via *H*ypersonic
-      h: open(
-        "notion://www.notion.so/stellatehq/7b33b924746647499d906c55f89d5026"
-      ),
-      z: app("zoom.us"),
-      // "M"arkdown (Reflect.app)
-      m: app("Reflect"),
-      r: app("Reflect"),
-      f: app("Finder"),
-      // "i"Message
-      i: app("Texts"),
-      p: app("Spotify"),
-      a: app("iA Presenter"),
       // "W"hatsApp has been replaced by Texts
-      w: open("Texts"),
-      l: open(
-        "raycast://extensions/stellate/mxstbr-commands/open-mxs-is-shortlink"
-      ),
+      w: open("WhatsApp"),
     },
 
     // TODO: This doesn't quite work yet.
