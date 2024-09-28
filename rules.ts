@@ -332,7 +332,107 @@ const rules: KarabinerRules[] = [
         ],
       },
     ],
-  },
+  },  
+    // Additional rule for custom deletion and navigation mappings
+    {
+      description: "Custom Ctrl and Cmd Keybindings for Word and Line Deletion/Navigation",
+      manipulators: [
+        // Cmd + Backspace for word deletion
+        {
+          type: "basic",
+          from: {
+            key_code: "delete_or_backspace",
+            modifiers: {
+              mandatory: ["command"]
+            }
+          },
+          to: [
+            {
+              key_code: "delete_or_backspace",
+              modifiers: ["option"]
+            }
+          ]
+        },
+        // Cmd + Arrow for word navigation
+        {
+          type: "basic",
+          from: {
+            key_code: "left_arrow",
+            modifiers: {
+              mandatory: ["command"]
+            }
+          },
+          to: [
+            {
+              key_code: "left_arrow",
+              modifiers: ["option"]
+            }
+          ]
+        },
+        {
+          type: "basic",
+          from: {
+            key_code: "right_arrow",
+            modifiers: {
+              mandatory: ["command"]
+            }
+          },
+          to: [
+            {
+              key_code: "right_arrow",
+              modifiers: ["option"]
+            }
+          ]
+        },
+        // Option + Backspace for deleting the entire line
+        {
+          type: "basic",
+          from: {
+            key_code: "delete_or_backspace",
+            modifiers: {
+              mandatory: ["option"]
+            }
+          },
+          to: [
+            {
+              key_code: "delete_or_backspace",
+              modifiers: ["command"]
+            }
+          ]
+        },
+        // Option + Arrow for moving to the beginning/end of the line
+        {
+          type: "basic",
+          from: {
+            key_code: "left_arrow",
+            modifiers: {
+              mandatory: ["option"]
+            }
+          },
+          to: [
+            {
+              key_code: "left_arrow",
+              modifiers: ["command"]
+            }
+          ]
+        },
+        {
+          type: "basic",
+          from: {
+            key_code: "right_arrow",
+            modifiers: {
+              mandatory: ["option"]
+            }
+          },
+          to: [
+            {
+              key_code: "right_arrow",
+              modifiers: ["command"]
+            }
+          ]
+        }
+      ]
+    }
 ];
 
 fs.writeFileSync(
