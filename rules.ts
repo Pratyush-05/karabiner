@@ -38,21 +38,21 @@ const rules: KarabinerRules[] = [
         ],
         type: "basic",
       },
-           {
-             type: "basic",
-             description: "Disable CMD + Tab to force Hyper Key usage",
-             from: {
-               key_code: "tab",
-               modifiers: {
-                 mandatory: ["left_command"],
-               },
-             },
-             to: [
-               {
-                 key_code: "tab",
-               },
-             ],
-           },
+         //   {
+         //     type: "basic",
+         //     description: "Disable CMD + Tab to force Hyper Key usage",
+         //     from: {
+         //       key_code: "tab",
+         //       modifiers: {
+         //         mandatory: ["left_command"],
+         //       },
+         //     },
+         //     to: [
+         //       {
+         //         key_code: "tab",
+         //       },
+         //     ],
+         //   },
     ],
   },
   ...createHyperSubLayers({
@@ -77,7 +77,7 @@ const rules: KarabinerRules[] = [
       g: app("ChatGPT"),
       r: app("Reminders"),
       n: app("Notes"),
-      t: app("Terminal"),
+      t: app("Terminal"), 
       // Open todo list managed via *H*ypersonic
       // "W"hatsApp has been replaced by Texts
       w: open("WhatsApp"),
@@ -448,7 +448,27 @@ fs.writeFileSync(
           complex_modifications: {
             rules,
           },
+          devices: [
+            {
+                "identifiers": {
+                    "is_keyboard": true,
+                    "product_id": 35111,
+                    "vendor_id": 10874
+                },
+                "simple_modifications": [
+                    {
+                        "from": { "key_code": "left_option" },
+                        "to": [{ "key_code": "left_command" }]
+                    },
+                    {
+                        "from": { "key_code": "left_command" },
+                        "to": [{ "key_code": "left_option" }]
+                    }
+                ]
+            }
+         ],
         },
+        
       ],
     },
     null,
