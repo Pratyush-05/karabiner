@@ -62,12 +62,12 @@ const rules: KarabinerRules[] = [
     // b = "B"rowse
     b: {
       t: open("https://twitter.com"),
-      // Quarterly "P"lan
-      p: open("https://mxstbr.com/cal"),
-      y: open("https://news.ycombinator.com"),
-      f: open("https://facebook.com"),
       r: open("https://reddit.com"),
-      h: open("https://hashnode.com/draft"),
+      d: open("https://drive.google.com/drive/home"),
+      g: open("https://maps.google.com/maps"),
+      l: open("https://linkedin.com"),
+      o: open("https://docs.google.com/spreadsheets/d/1gMXdxxK_eYl-ybl16Vg3euAdQz_jKqfI-iMLOgXo_Kg/edit?pli=1&gid=908160810#gid=908160810"),
+      p: open("https://docs.google.com/spreadsheets/d/1KtKigalWTAk6HKon0aKDogO_l8uySfSE2WeHfpFLdMw/edit?gid=0#gid=0"),
     },
     // o = "Open" applications
     o: {
@@ -80,7 +80,17 @@ const rules: KarabinerRules[] = [
       t: app("Terminal"), 
       // Open todo list managed via *H*ypersonic
       // "W"hatsApp has been replaced by Texts
-      w: open("WhatsApp"),
+      w: app("WhatsApp"),
+      f: app("finder"),
+      a: {
+         description: "Add a reminder",
+         to: [
+           {
+             key_code: "r",
+             modifiers: ["right_option"],
+           },
+         ],
+       },
     },
 
     // TODO: This doesn't quite work yet.
