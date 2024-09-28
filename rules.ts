@@ -68,6 +68,8 @@ const rules: KarabinerRules[] = [
       l: open("https://linkedin.com"),
       o: open("https://docs.google.com/spreadsheets/d/1gMXdxxK_eYl-ybl16Vg3euAdQz_jKqfI-iMLOgXo_Kg/edit?pli=1&gid=908160810#gid=908160810"),
       p: open("https://docs.google.com/spreadsheets/d/1KtKigalWTAk6HKon0aKDogO_l8uySfSE2WeHfpFLdMw/edit?gid=0#gid=0"),
+      y: open("https://www.youtube.com/"),
+      m: open("https://mail.google.com/mail"),
     },
     // o = "Open" applications
     o: {
@@ -78,8 +80,6 @@ const rules: KarabinerRules[] = [
       r: app("Reminders"),
       n: app("Notes"),
       t: app("Terminal"), 
-      // Open todo list managed via *H*ypersonic
-      // "W"hatsApp has been replaced by Texts
       w: app("WhatsApp"),
       f: app("finder"),
       a: {
