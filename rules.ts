@@ -82,6 +82,7 @@ const rules: KarabinerRules[] = [
       t: app("Terminal"), 
       w: app("WhatsApp"),
       f: app("finder"),
+      m: app("iPhone Mirroring"),
       a: {
          description: "Add a reminder",
          to: [
