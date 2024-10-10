@@ -1,6 +1,6 @@
 import fs from "fs";
 import { KarabinerRules } from "./types";
-import { createHyperSubLayers, app, open, rectangle, shell } from "./utils";
+import { app, createHyperSubLayers, open, rectangle } from "./utils";
 
 const rules: KarabinerRules[] = [
   // Define the Hyper key itself
@@ -89,6 +89,15 @@ const rules: KarabinerRules[] = [
            {
              key_code: "r",
              modifiers: ["right_option"],
+           },
+         ],
+       },
+      i: {
+         description: "Open Itscal",
+         to: [
+           {
+             key_code: "l",
+             modifiers: ["right_option", "right_command"],
            },
          ],
        },
