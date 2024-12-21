@@ -38,21 +38,21 @@ const rules: KarabinerRules[] = [
         ],
         type: "basic",
       },
-         //   {
-         //     type: "basic",
-         //     description: "Disable CMD + Tab to force Hyper Key usage",
-         //     from: {
-         //       key_code: "tab",
-         //       modifiers: {
-         //         mandatory: ["left_command"],
-         //       },
-         //     },
-         //     to: [
-         //       {
-         //         key_code: "tab",
-         //       },
-         //     ],
-         //   },
+      //   {
+      //     type: "basic",
+      //     description: "Disable CMD + Tab to force Hyper Key usage",
+      //     from: {
+      //       key_code: "tab",
+      //       modifiers: {
+      //         mandatory: ["left_command"],
+      //       },
+      //     },
+      //     to: [
+      //       {
+      //         key_code: "tab",
+      //       },
+      //     ],
+      //   },
     ],
   },
   ...createHyperSubLayers({
@@ -63,44 +63,68 @@ const rules: KarabinerRules[] = [
     b: {
       t: open("https://twitter.com"),
       r: open("https://reddit.com"),
-      d: open("https://drive.google.com/drive/home"),
       g: open("https://maps.google.com/maps"),
       l: open("https://linkedin.com"),
-      o: open("https://docs.google.com/spreadsheets/d/1gMXdxxK_eYl-ybl16Vg3euAdQz_jKqfI-iMLOgXo_Kg/edit?pli=1&gid=908160810#gid=908160810"),
-      p: open("https://docs.google.com/spreadsheets/d/1KtKigalWTAk6HKon0aKDogO_l8uySfSE2WeHfpFLdMw/edit?gid=0#gid=0"),
+      o: open(
+        "https://docs.google.com/spreadsheets/d/1gMXdxxK_eYl-ybl16Vg3euAdQz_jKqfI-iMLOgXo_Kg/edit?pli=1&gid=908160810#gid=908160810"
+      ),
+      p: open(
+        "https://docs.google.com/spreadsheets/d/1KtKigalWTAk6HKon0aKDogO_l8uySfSE2WeHfpFLdMw/edit?gid=0#gid=0"
+      ),
       y: open("https://www.youtube.com/"),
-      m: open("https://mail.google.com/mail"),
+      a: open("https://mail.google.com/mail/u/0"), //profiesta98
+      s: open("https://mail.google.com/mail/u/1"), //purohit.pratyush05@gmail.com
+      d: open("https://mail.google.com/mail/u/2"), //we.theoddball@gmail.com
+      f: open("https://mail.google.com/mail/u/3"), //profiesta9801@gmail.com
     },
     // o = "Open" applications
     o: {
       b: app("Brave Browser"),
-      c: app("Calendar"),
       v: app("Visual Studio Code"),
-      g: app("ChatGPT"),
+      g: app("Claude"),
       r: app("Reminders"),
       n: app("Notes"),
-      t: app("Terminal"), 
+      t: app("Warp"),
       w: app("WhatsApp"),
       f: app("finder"),
-      m: app("iPhone Mirroring"),
+      p: app("iPhone Mirroring"),
+      m: app("Youtube Music"),
+      c: {
+        description: "Create a Calendar Event",
+        to: [
+          {
+            key_code: "4",
+            modifiers: ["option", "command"],
+          },
+        ],
+      },
       a: {
-         description: "Add a reminder",
-         to: [
-           {
-             key_code: "r",
-             modifiers: ["right_option"],
-           },
-         ],
-       },
-      i: {
-         description: "Open Itscal",
-         to: [
-           {
-             key_code: "l",
-             modifiers: ["right_option", "right_command"],
-           },
-         ],
-       },
+        description: "Open Reminders Menubar",
+        to: [
+          {
+            key_code: "r",
+            modifiers: ["option", "command"],
+          },
+        ],
+      },
+      y: {
+        description: "Open Today App in Menubar",
+        to: [
+          {
+            key_code: "3",
+            modifiers: ["option", "command"],
+          },
+        ],
+      },
+      d: {
+        description: "Open Dato Window",
+        to: [
+          {
+            key_code: "l",
+            modifiers: ["right_option", "right_command"],
+          },
+        ],
+      },
     },
 
     // TODO: This doesn't quite work yet.
@@ -186,13 +210,6 @@ const rules: KarabinerRules[] = [
 
     // s = "System"
     s: {
-      u: {
-        to: [
-          {
-            key_code: "volume_increment",
-          },
-        ],
-      },
       j: {
         to: [
           {
@@ -200,17 +217,24 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
+      k: {
+        to: [
+          {
+            key_code: "volume_increment",
+          },
+        ],
+      },
+      u: {
+        to: [
+          {
+            key_code: "display_brightness_decrement",
+          },
+        ],
+      },
       i: {
         to: [
           {
             key_code: "display_brightness_increment",
-          },
-        ],
-      },
-      k: {
-        to: [
-          {
-            key_code: "display_brightness_decrement",
           },
         ],
       },
@@ -222,36 +246,18 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      p: {
-        to: [
-          {
-            key_code: "play_or_pause",
-          },
-        ],
-      },
-      semicolon: {
-        to: [
-          {
-            key_code: "fastforward",
-          },
-        ],
-      },
-      e: open(
-        `raycast://extensions/thomas/elgato-key-light/toggle?launchType=background`
-      ),
       // "D"o not disturb toggle
       d: open(
         `raycast://extensions/yakitrak/do-not-disturb/toggle?launchType=background`
       ),
       // "T"heme
-      t: open(`raycast://extensions/raycast/system/toggle-system-appearance`),
       c: open("raycast://extensions/raycast/system/open-camera"),
-      // 'v'oice
-      v: {
+      // Toggle the big clock
+      t: {
         to: [
           {
-            key_code: "spacebar",
-            modifiers: ["left_option"],
+            key_code: "0",
+            modifiers: ["right_option", "right_command"],
           },
         ],
       },
@@ -259,37 +265,36 @@ const rules: KarabinerRules[] = [
 
     // v = "moVe" which isn't "m" because we want it to be on the left hand
     // so that hjkl work like they do in vim
-    v: {
-      h: {
-        to: [{ key_code: "left_arrow" }],
-      },
-      j: {
-        to: [{ key_code: "down_arrow" }],
-      },
-      k: {
-        to: [{ key_code: "up_arrow" }],
-      },
-      l: {
-        to: [{ key_code: "right_arrow" }],
-      },
+    h: {
+      to: [{ key_code: "left_arrow" }],
+    },
+    j: {
+      to: [{ key_code: "down_arrow" }],
+    },
+    k: {
+      to: [{ key_code: "up_arrow" }],
+    },
+    l: {
+      to: [{ key_code: "right_arrow" }],
+    },
+    f: {
       // Magicmove via homerow.app
-      m: {
-        to: [{ key_code: "f", modifiers: ["right_control"] }],
-        // TODO: Trigger Vim Easymotion when VSCode is focused
-      },
-      // Scroll mode via homerow.app
-      s: {
-        to: [{ key_code: "j", modifiers: ["right_control"] }],
-      },
-      d: {
-        to: [{ key_code: "d", modifiers: ["right_shift", "right_command"] }],
-      },
-      u: {
-        to: [{ key_code: "page_down" }],
-      },
-      i: {
-        to: [{ key_code: "page_up" }],
-      },
+      to: [{ key_code: "1", modifiers: ["option", "command"] }],
+      // TODO: Trigger Vim Easymotion when VSCode is focused
+    },
+    // Scroll mode via homerow.app
+    g: {
+      to: [{ key_code: "2", modifiers: ["option", "command"] }],
+    },
+    // activate whisprflow
+    v: {
+      to: [{ key_code: "fn" }],
+    },
+    d: {
+      to: [{ key_code: "page_down" }],
+    },
+    u: {
+      to: [{ key_code: "page_up" }],
     },
 
     // c = Musi*c* which isn't "m" because we want it to be on the left hand
@@ -308,7 +313,7 @@ const rules: KarabinerRules[] = [
     // r = "Raycast"
     r: {
       c: open("raycast://extensions/thomas/color-picker/pick-color"),
-      n: open("raycast://script-commands/dismiss-notifications"),
+      n: open("raycast://extensions/raycast/raycast-notes/raycast-notes"),
       l: open(
         "raycast://extensions/stellate/mxstbr-commands/create-mxs-is-shortlink"
       ),
@@ -316,8 +321,9 @@ const rules: KarabinerRules[] = [
         "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
       ),
       p: open("raycast://extensions/raycast/raycast/confetti"),
-      a: open("raycast://extensions/raycast/raycast-ai/ai-chat"),
-      s: open("raycast://extensions/peduarte/silent-mention/index"),
+      i: {
+        to: [{ key_code: "d", modifiers: ["shift", "option", "control"] }],
+      },
       h: open(
         "raycast://extensions/raycast/clipboard-history/clipboard-history"
       ),
@@ -328,6 +334,7 @@ const rules: KarabinerRules[] = [
         "raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-2"
       ),
     },
+    m: {},
   }),
   {
     description: "Change Backspace to Spacebar when Minecraft is focused",
@@ -352,107 +359,108 @@ const rules: KarabinerRules[] = [
         ],
       },
     ],
-  },  
-    // Additional rule for custom deletion and navigation mappings
-    {
-      description: "Custom Ctrl and Cmd Keybindings for Word and Line Deletion/Navigation",
-      manipulators: [
-        // Cmd + Backspace for word deletion
-        {
-          type: "basic",
-          from: {
+  },
+  // Additional rule for custom deletion and navigation mappings
+  {
+    description:
+      "Custom Ctrl and Cmd Keybindings for Word and Line Deletion/Navigation",
+    manipulators: [
+      // Cmd + Backspace for word deletion
+      {
+        type: "basic",
+        from: {
+          key_code: "delete_or_backspace",
+          modifiers: {
+            mandatory: ["command"],
+          },
+        },
+        to: [
+          {
             key_code: "delete_or_backspace",
-            modifiers: {
-              mandatory: ["command"]
-            }
+            modifiers: ["option"],
           },
-          to: [
-            {
-              key_code: "delete_or_backspace",
-              modifiers: ["option"]
-            }
-          ]
+        ],
+      },
+      // Cmd + Arrow for word navigation
+      {
+        type: "basic",
+        from: {
+          key_code: "left_arrow",
+          modifiers: {
+            mandatory: ["command"],
+          },
         },
-        // Cmd + Arrow for word navigation
-        {
-          type: "basic",
-          from: {
+        to: [
+          {
             key_code: "left_arrow",
-            modifiers: {
-              mandatory: ["command"]
-            }
+            modifiers: ["option"],
           },
-          to: [
-            {
-              key_code: "left_arrow",
-              modifiers: ["option"]
-            }
-          ]
+        ],
+      },
+      {
+        type: "basic",
+        from: {
+          key_code: "right_arrow",
+          modifiers: {
+            mandatory: ["command"],
+          },
         },
-        {
-          type: "basic",
-          from: {
+        to: [
+          {
             key_code: "right_arrow",
-            modifiers: {
-              mandatory: ["command"]
-            }
+            modifiers: ["option"],
           },
-          to: [
-            {
-              key_code: "right_arrow",
-              modifiers: ["option"]
-            }
-          ]
+        ],
+      },
+      // Option + Backspace for deleting the entire line
+      {
+        type: "basic",
+        from: {
+          key_code: "delete_or_backspace",
+          modifiers: {
+            mandatory: ["option"],
+          },
         },
-        // Option + Backspace for deleting the entire line
-        {
-          type: "basic",
-          from: {
+        to: [
+          {
             key_code: "delete_or_backspace",
-            modifiers: {
-              mandatory: ["option"]
-            }
+            modifiers: ["command"],
           },
-          to: [
-            {
-              key_code: "delete_or_backspace",
-              modifiers: ["command"]
-            }
-          ]
+        ],
+      },
+      // Option + Arrow for moving to the beginning/end of the line
+      {
+        type: "basic",
+        from: {
+          key_code: "left_arrow",
+          modifiers: {
+            mandatory: ["option"],
+          },
         },
-        // Option + Arrow for moving to the beginning/end of the line
-        {
-          type: "basic",
-          from: {
+        to: [
+          {
             key_code: "left_arrow",
-            modifiers: {
-              mandatory: ["option"]
-            }
+            modifiers: ["command"],
           },
-          to: [
-            {
-              key_code: "left_arrow",
-              modifiers: ["command"]
-            }
-          ]
+        ],
+      },
+      {
+        type: "basic",
+        from: {
+          key_code: "right_arrow",
+          modifiers: {
+            mandatory: ["option"],
+          },
         },
-        {
-          type: "basic",
-          from: {
+        to: [
+          {
             key_code: "right_arrow",
-            modifiers: {
-              mandatory: ["option"]
-            }
+            modifiers: ["command"],
           },
-          to: [
-            {
-              key_code: "right_arrow",
-              modifiers: ["command"]
-            }
-          ]
-        }
-      ]
-    }
+        ],
+      },
+    ],
+  },
 ];
 
 fs.writeFileSync(
