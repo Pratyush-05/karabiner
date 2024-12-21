@@ -210,7 +210,7 @@ const rules: KarabinerRules[] = [
 
     // s = "System"
     s: {
-      j: {
+      j:{
         to: [
           {
             key_code: "volume_decrement",
@@ -261,7 +261,16 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-    },
+      // Clear notificaitons using Aliento
+      n: {
+        to: [
+              {
+                key_code: "5",
+                modifiers: ["option", "command"],
+              },
+            ],
+          }
+      },
 
     // v = "moVe" which isn't "m" because we want it to be on the left hand
     // so that hjkl work like they do in vim
@@ -467,7 +476,7 @@ fs.writeFileSync(
   "karabiner.json",
   JSON.stringify(
     {
-      global: {
+      global:   {
         show_in_menu_bar: false,
       },
       profiles: [
