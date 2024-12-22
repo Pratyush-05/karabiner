@@ -79,7 +79,7 @@ const rules: KarabinerRules[] = [
     },
     // o = "Open" applications
     o: {
-      b: app("Brave Browser"),
+      b: app("Arc"),
       v: app("Visual Studio Code"),
       g: app("Claude"),
       r: app("Reminders"),
@@ -160,6 +160,7 @@ const rules: KarabinerRules[] = [
       h: rectangle("left-half"),
       l: rectangle("right-half"),
       f: rectangle("maximize"),
+      c: rectangle("center"),
       u: {
         description: "Window: Previous Tab",
         to: [
@@ -317,6 +318,15 @@ const rules: KarabinerRules[] = [
       b: {
         to: [{ key_code: "rewind" }],
       },
+      1: open(
+        "raycast://extensions/VladCuciureanu/toothpick/toggle-favorite-device-1"
+      ),
+      2: open(
+        "raycast://extensions/VladCuciureanu/toothpick/toggle-favorite-device-2"
+      ),
+      3: open(
+        "raycast://extensions/VladCuciureanu/toothpick/toggle-favorite-device-3"
+      ),
     },
 
     // r = "Raycast"
@@ -336,12 +346,7 @@ const rules: KarabinerRules[] = [
       h: open(
         "raycast://extensions/raycast/clipboard-history/clipboard-history"
       ),
-      1: open(
-        "raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-1"
-      ),
-      2: open(
-        "raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-2"
-      ),
+
     },
     m: {},
   }),
