@@ -1044,12 +1044,17 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "Window: almost-maximize",
+                                "description": "Almost Maximize",
                                 "from": {
                                     "key_code": "g",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [{ "shell_command": "open -g rectangle://execute-action?name=almost-maximize" }],
+                                "to": [
+                                    {
+                                        "key_code": "7",
+                                        "modifiers": ["command", "shift"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -1512,17 +1517,12 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "Create a Calendar Event",
+                                "description": "Open raycast://extensions/mblode/quick-event/index",
                                 "from": {
                                     "key_code": "a",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "4",
-                                        "modifiers": ["option", "command"]
-                                    }
-                                ],
+                                "to": [{ "shell_command": "open raycast://extensions/mblode/quick-event/index" }],
                                 "type": "basic"
                             },
                             {
@@ -1549,12 +1549,17 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "Open raycast://extensions/raycast/raycast-notes/raycast-notes",
+                                "description": "Create a Quick Note",
                                 "from": {
                                     "key_code": "n",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [{ "shell_command": "open raycast://extensions/raycast/raycast-notes/raycast-notes" }],
+                                "to": [
+                                    {
+                                        "key_code": "6",
+                                        "modifiers": ["option", "command"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {

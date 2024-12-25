@@ -139,7 +139,16 @@ const rules: KarabinerRules[] = [
       f: rectangle("maximize"),
       c: rectangle("center"),
       r: rectangle("restore"),
-      g: rectangle("almost-maximize"),
+      g: {
+        // Because 60% works only with raycast's custom window management
+        description: "Almost Maximize", 
+        to: [
+          {
+            key_code: "7",
+            modifiers: ["command", "shift"],
+          },
+        ],
+      },
       u: {
         description: "window: Previous Tab",
         to: [
@@ -216,17 +225,17 @@ const rules: KarabinerRules[] = [
 
     // r = "Raycast"
     r: {
-      a: {
-        description: "Create a Calendar Event",
+      a: open("raycast://extensions/mblode/quick-event/index"),
+      c: open("raycast://extensions/thomas/color-picker/pick-color"),
+      n: {
+        description: "Create a Quick Note", 
         to: [
           {
-            key_code: "4",
+            key_code: "6",
             modifiers: ["option", "command"],
           },
         ],
       },
-      c: open("raycast://extensions/thomas/color-picker/pick-color"),
-      n: open("raycast://extensions/raycast/raycast-notes/raycast-notes"),
       l: open(
         "raycast://extensions/Visual-Studio-Coder/url-shortener/shorten-url"
       ),
