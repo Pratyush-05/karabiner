@@ -57,7 +57,7 @@ const rules: KarabinerRules[] = [
   },
   ...createHyperSubLayers({
     spacebar: open(
-      "raycast://extensions/stellate/mxstbr-commands/create-notion-todo"
+      "raycast://extensions/raycast/apple-reminders/create-reminder"
     ),
     // b = "B"rowse
     b: {
@@ -81,41 +81,14 @@ const rules: KarabinerRules[] = [
     o: {
       b: app("Arc"),
       v: app("Visual Studio Code"),
-      g: app("Claude"),
       r: app("Reminders"),
+      c: app("Calendar"),
+      a: app("Obsidian"),
       n: app("Notes"),
       t: app("Warp"),
-      w: app("WhatsApp"),
+      w: app("Texts"),
       f: app("finder"),
-      p: app("iPhone Mirroring"),
       m: app("Youtube Music"),
-      c: {
-        description: "Create a Calendar Event",
-        to: [
-          {
-            key_code: "4",
-            modifiers: ["option", "command"],
-          },
-        ],
-      },
-      a: {
-        description: "Open Reminders Menubar",
-        to: [
-          {
-            key_code: "r",
-            modifiers: ["option", "command"],
-          },
-        ],
-      },
-      y: {
-        description: "Open Today App in Menubar",
-        to: [
-          {
-            key_code: "3",
-            modifiers: ["option", "command"],
-          },
-        ],
-      },
       d: {
         description: "Open Dato Window",
         to: [
@@ -125,8 +98,12 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
+      g: app("ChatGPT"),
+      p: app("perplexity"),
+      e: app("Claude"),
     },
 
+    //ask layer
     // TODO: This doesn't quite work yet.
     // l = "Layouts" via Raycast's custom window management
     // l: {
@@ -161,8 +138,10 @@ const rules: KarabinerRules[] = [
       l: rectangle("right-half"),
       f: rectangle("maximize"),
       c: rectangle("center"),
+      r: rectangle("restore"),
+      g: rectangle("almost-maximize"),
       u: {
-        description: "Window: Previous Tab",
+        description: "window: Previous Tab",
         to: [
           {
             key_code: "tab",
@@ -208,7 +187,65 @@ const rules: KarabinerRules[] = [
         ],
       },
     },
+    // c = Musi*c* which isn't "m" because we want it to be on the left hand
+    c: {
+      p: {
+        to: [{ key_code: "play_or_pause" }],
+      },
+      n: {
+        to: [{ key_code: "fastforward" }],
+      },
+      b: {
+        to: [{ key_code: "rewind" }],
+      },
+      1: open(
+        "raycast://extensions/VladCuciureanu/toothpick/toggle-favorite-device-1"
+      ),
+      2: open(
+        "raycast://extensions/VladCuciureanu/toothpick/toggle-favorite-device-2"
+      ),
+      3: open(
+        "raycast://extensions/VladCuciureanu/toothpick/toggle-favorite-device-3"
+      ),
+      i: open(
+        "raycast://extensions/benvp/audio-device/set-input-device"),
+      o: open(
+        "raycast://extensions/benvp/audio-device/set-output-device"
+      ),
+    },
 
+    // r = "Raycast"
+    r: {
+      a: {
+        description: "Create a Calendar Event",
+        to: [
+          {
+            key_code: "4",
+            modifiers: ["option", "command"],
+          },
+        ],
+      },
+      c: open("raycast://extensions/thomas/color-picker/pick-color"),
+      n: open("raycast://extensions/raycast/raycast-notes/raycast-notes"),
+      l: open(
+        "raycast://extensions/Visual-Studio-Coder/url-shortener/shorten-url"
+      ),
+      e: open(
+        "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
+      ),
+      p: open("raycast://extensions/raycast/raycast/confetti"),
+      i: {
+        to: [{ key_code: "d", modifiers: ["shift", "option", "control"] }],
+      },
+      h: open(
+        "raycast://extensions/raycast/clipboard-history/clipboard-history"
+      ),
+      m: open("raycast://extensions/raycast/apple-reminders/my-reminders"),
+      //today - inspired from Today App 
+      y: open("raycast://extensions/raycast/calendar/my-schedule"),
+      // journal
+      j: open("raycast://extensions/KevinBatdorf/obsidian/dailyNoteCommand"),
+    },
     // s = "System"
     s: {
       j:{
@@ -307,48 +344,7 @@ const rules: KarabinerRules[] = [
       to: [{ key_code: "page_up" }],
     },
 
-    // c = Musi*c* which isn't "m" because we want it to be on the left hand
-    c: {
-      p: {
-        to: [{ key_code: "play_or_pause" }],
-      },
-      n: {
-        to: [{ key_code: "fastforward" }],
-      },
-      b: {
-        to: [{ key_code: "rewind" }],
-      },
-      1: open(
-        "raycast://extensions/VladCuciureanu/toothpick/toggle-favorite-device-1"
-      ),
-      2: open(
-        "raycast://extensions/VladCuciureanu/toothpick/toggle-favorite-device-2"
-      ),
-      3: open(
-        "raycast://extensions/VladCuciureanu/toothpick/toggle-favorite-device-3"
-      ),
-    },
 
-    // r = "Raycast"
-    r: {
-      c: open("raycast://extensions/thomas/color-picker/pick-color"),
-      n: open("raycast://extensions/raycast/raycast-notes/raycast-notes"),
-      l: open(
-        "raycast://extensions/stellate/mxstbr-commands/create-mxs-is-shortlink"
-      ),
-      e: open(
-        "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
-      ),
-      p: open("raycast://extensions/raycast/raycast/confetti"),
-      i: {
-        to: [{ key_code: "d", modifiers: ["shift", "option", "control"] }],
-      },
-      h: open(
-        "raycast://extensions/raycast/clipboard-history/clipboard-history"
-      ),
-
-    },
-    m: {},
   }),
   {
     description: "Change Backspace to Spacebar when Minecraft is focused",
