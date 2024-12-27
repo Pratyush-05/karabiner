@@ -878,10 +878,10 @@
                 "description": "Open Dato Window",
                 "to": [
                   {
-                    "key_code": "l",
+                    "key_code": "8",
                     "modifiers": [
-                      "right_option",
-                      "right_command"
+                      "option",
+                      "command"
                     ]
                   }
                 ],

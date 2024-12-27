@@ -95,8 +95,8 @@ const rules: KarabinerRules[] = [
         description: "Open Dato Window",
         to: [
           {
-            key_code: "l",
-            modifiers: ["right_option", "right_command"],
+            key_code: "8",
+            modifiers: ["option", "command"],
           },
         ],
       },
