@@ -56,11 +56,16 @@ const rules: KarabinerRules[] = [
     ],
   },
   ...createHyperSubLayers({
-    spacebar: {
-      // Magicmove via homerow.app
+    f: {
+      // Magicmove via contexts.app
       to: [{ key_code: "1", modifiers: ["option", "command"] }],
       // TODO: Trigger Vim Easymotion when VSCode is focused
     },
+
+
+      spacebar: open(
+        "raycast://extensions/raycast/apple-reminders/create-reminder"
+      ),
     // b = "B"rowse
     b: {
       t: open("https://twitter.com"),
@@ -227,9 +232,7 @@ const rules: KarabinerRules[] = [
 
     // r = "Raycast"
     r: {
-      spacebar: open(
-        "raycast://extensions/raycast/apple-reminders/create-reminder"
-      ),
+      
       a: open("raycast://extensions/mblode/quick-event/index"),
       c: open("raycast://extensions/thomas/color-picker/pick-color"),
       n: {

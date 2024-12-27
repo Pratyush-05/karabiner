@@ -46,7 +46,7 @@
             ]
           },
           {
-            "description": "Hyper Key + spacebar",
+            "description": "Hyper Key + f",
             "manipulators": [
               {
                 "to": [
@@ -58,6 +58,115 @@
                     ]
                   }
                 ],
+                "type": "basic",
+                "from": {
+                  "key_code": "f",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper",
+                    "value": 1
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_f",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_spacebar",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_b",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_o",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_w",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_c",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_r",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_s",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_h",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_j",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_k",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_l",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_g",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_v",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_d",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_u",
+                    "value": 0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "description": "Hyper Key + spacebar",
+            "manipulators": [
+              {
+                "to": [
+                  {
+                    "shell_command": "open raycast://extensions/raycast/apple-reminders/create-reminder"
+                  }
+                ],
+                "description": "Open raycast://extensions/raycast/apple-reminders/create-reminder",
                 "type": "basic",
                 "from": {
                   "key_code": "spacebar",
@@ -72,6 +181,11 @@
                     "type": "variable_if",
                     "name": "hyper",
                     "value": 1
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_f",
+                    "value": 0
                   },
                   {
                     "type": "variable_if",
@@ -183,6 +297,11 @@
                   }
                 ],
                 "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_f",
+                    "value": 0
+                  },
                   {
                     "type": "variable_if",
                     "name": "hyper_sublayer_spacebar",
@@ -557,6 +676,11 @@
                   }
                 ],
                 "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_f",
+                    "value": 0
+                  },
                   {
                     "type": "variable_if",
                     "name": "hyper_sublayer_spacebar",
@@ -1007,6 +1131,11 @@
                   }
                 ],
                 "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_f",
+                    "value": 0
+                  },
                   {
                     "type": "variable_if",
                     "name": "hyper_sublayer_spacebar",
@@ -1526,6 +1655,11 @@
                 "conditions": [
                   {
                     "type": "variable_if",
+                    "name": "hyper_sublayer_f",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
                     "name": "hyper_sublayer_spacebar",
                     "value": 0
                   },
@@ -1825,6 +1959,11 @@
                 "conditions": [
                   {
                     "type": "variable_if",
+                    "name": "hyper_sublayer_f",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
                     "name": "hyper_sublayer_spacebar",
                     "value": 0
                   },
@@ -1896,30 +2035,6 @@
                   {
                     "type": "variable_if",
                     "name": "hyper",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "shell_command": "open raycast://extensions/raycast/apple-reminders/create-reminder"
-                  }
-                ],
-                "description": "Open raycast://extensions/raycast/apple-reminders/create-reminder",
-                "type": "basic",
-                "from": {
-                  "key_code": "spacebar",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_r",
                     "value": 1
                   }
                 ]
@@ -2229,6 +2344,11 @@
                   }
                 ],
                 "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_f",
+                    "value": 0
+                  },
                   {
                     "type": "variable_if",
                     "name": "hyper_sublayer_spacebar",
@@ -2555,6 +2675,11 @@
                   },
                   {
                     "type": "variable_if",
+                    "name": "hyper_sublayer_f",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
                     "name": "hyper_sublayer_spacebar",
                     "value": 0
                   },
@@ -2655,6 +2780,11 @@
                     "type": "variable_if",
                     "name": "hyper",
                     "value": 1
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_f",
+                    "value": 0
                   },
                   {
                     "type": "variable_if",
@@ -2761,6 +2891,11 @@
                   },
                   {
                     "type": "variable_if",
+                    "name": "hyper_sublayer_f",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
                     "name": "hyper_sublayer_spacebar",
                     "value": 0
                   },
@@ -2861,6 +2996,11 @@
                     "type": "variable_if",
                     "name": "hyper",
                     "value": 1
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_f",
+                    "value": 0
                   },
                   {
                     "type": "variable_if",
@@ -2971,6 +3111,11 @@
                   },
                   {
                     "type": "variable_if",
+                    "name": "hyper_sublayer_f",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
                     "name": "hyper_sublayer_spacebar",
                     "value": 0
                   },
@@ -3071,6 +3216,11 @@
                     "type": "variable_if",
                     "name": "hyper",
                     "value": 1
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_f",
+                    "value": 0
                   },
                   {
                     "type": "variable_if",
@@ -3177,6 +3327,11 @@
                   },
                   {
                     "type": "variable_if",
+                    "name": "hyper_sublayer_f",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
                     "name": "hyper_sublayer_spacebar",
                     "value": 0
                   },
@@ -3277,6 +3432,11 @@
                     "type": "variable_if",
                     "name": "hyper",
                     "value": 1
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_f",
+                    "value": 0
                   },
                   {
                     "type": "variable_if",
