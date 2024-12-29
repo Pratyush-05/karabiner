@@ -278,7 +278,7 @@ const rules: KarabinerRules[] = [
             ],
           },
       // Clear notificaitons using Aliento
-          x: {
+          n: {
             to: [
               {
                 key_code: "5",
@@ -289,16 +289,17 @@ const rules: KarabinerRules[] = [
           p: {
             to: [{ key_code: "play_or_pause" }],
           },
-          n: {
+          close_bracket: {
             to: [{ key_code: "fastforward" }],
           },
-          b: {
+          open_bracket: {
             to: [{ key_code: "rewind" }],
           },
-          1: open(
+          h: open(
             "raycast://extensions/VladCuciureanu/toothpick/toggle-favorite-device-1"
           ),
-          2: open(
+          e: open(
+            
             "raycast://extensions/VladCuciureanu/toothpick/toggle-favorite-device-2"
           ),
           3: open(
@@ -309,6 +310,24 @@ const rules: KarabinerRules[] = [
           equal_sign: open(
             "raycast://extensions/benvp/audio-device/set-output-device"
           ),
+          // quit all apps from raycast
+          delete_or_backspace: {
+            to: [
+              {
+                key_code: "delete_or_backspace",
+                modifiers: ["option", "command"],
+              },
+            ], 
+          },
+          // Search files in Mac
+          f: {
+            to: [
+              {
+                key_code: "3",
+                modifiers: ["option", "command"],
+              },
+            ],
+          },
       },
 
 
