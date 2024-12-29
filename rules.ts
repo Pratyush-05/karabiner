@@ -58,16 +58,17 @@ const rules: KarabinerRules[] = [
   ...createHyperSubLayers({
     f: {
       // Magicmove via contexts.app
-      to: [{ key_code: "1", modifiers: ["option", "command"] }],
+      to: [{ key_code: "9", modifiers: ["option", "command"] }],
       // TODO: Trigger Vim Easymotion when VSCode is focused
     },
 
 
-      spacebar: open(
-        "raycast://extensions/raycast/apple-reminders/create-reminder"
-      ),
+    spacebar: 
+    {
+      to: [{ key_code: "1", modifiers: ["option", "command"] }],
+    },
     // b = "B"rowse
-    b: {
+    slash: {
       t: open("https://twitter.com"),
       r: open("https://reddit.com"),
       g: open("https://maps.google.com/maps"),
@@ -127,13 +128,13 @@ const rules: KarabinerRules[] = [
     // },
 
     // w = "Window" via rectangle.app
-    w: {
+    d: {
       semicolon: {
         description: "Window: Hide",
         to: [
           {
             key_code: "h",
-            modifiers: ["right_command"],
+            modifiers: ["command"],
           },
         ],
       },
@@ -156,83 +157,43 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      u: {
-        description: "window: Previous Tab",
-        to: [
-          {
-            key_code: "tab",
-            modifiers: ["right_control", "right_shift"],
-          },
-        ],
-      },
-      i: {
-        description: "Window: Next Tab",
-        to: [
-          {
-            key_code: "tab",
-            modifiers: ["right_control"],
-          },
-        ],
-      },
-      n: {
-        description: "Window: Next Window",
-        to: [
-          {
-            key_code: "grave_accent_and_tilde",
-            modifiers: ["right_command"],
-          },
-        ],
-      },
-      b: {
-        description: "Window: Back",
-        to: [
-          {
-            key_code: "open_bracket",
-            modifiers: ["right_command"],
-          },
-        ],
-      },
-      // Note: No literal connection. Both f and n are already taken.
-      m: {
-        description: "Window: Forward",
-        to: [
-          {
-            key_code: "close_bracket",
-            modifiers: ["right_command"],
-          },
-        ],
-      },
+      // u: {
+      //   description: "window: Previous Tab",
+      //   to: [
+      //     {
+      //       key_code: "tab",
+      //       modifiers: ["right_control", "right_shift"],
+      //     },
+      //   ],
+      // },
+      // i: {
+      //   description: "Window: Next Tab",
+      //   to: [
+      //     {
+      //       key_code: "tab",
+      //       modifiers: ["right_control"],
+      //     },
+      //   ],
+      // },
+      // n: {
+      //   description: "Window: Next Window",
+      //   to: [
+      //     {
+      //       key_code: "grave_accent_and_tilde",
+      //       modifiers: ["command"],
+      //     },
+      //   ],
+      // },
     },
     // c = Musi*c* which isn't "m" because we want it to be on the left hand
-    c: {
-      p: {
-        to: [{ key_code: "play_or_pause" }],
-      },
-      n: {
-        to: [{ key_code: "fastforward" }],
-      },
-      b: {
-        to: [{ key_code: "rewind" }],
-      },
-      1: open(
-        "raycast://extensions/VladCuciureanu/toothpick/toggle-favorite-device-1"
-      ),
-      2: open(
-        "raycast://extensions/VladCuciureanu/toothpick/toggle-favorite-device-2"
-      ),
-      3: open(
-        "raycast://extensions/VladCuciureanu/toothpick/toggle-favorite-device-3"
-      ),
-      i: open(
-        "raycast://extensions/benvp/audio-device/set-input-device"),
-      o: open(
-        "raycast://extensions/benvp/audio-device/set-output-device"
-      ),
-    },
+
 
     // r = "Raycast"
     r: {
-      
+      spacebar : 
+      open(
+        "raycast://extensions/raycast/apple-reminders/create-reminder"
+      ),
       a: open("raycast://extensions/mblode/quick-event/index"),
       c: open("raycast://extensions/thomas/color-picker/pick-color"),
       n: {
@@ -265,68 +226,96 @@ const rules: KarabinerRules[] = [
     },
     // s = "System"
     s: {
-      j:{
-        to: [
-          {
-            key_code: "volume_decrement",
+          j:{
+            to: [
+              {
+                key_code: "volume_decrement",
+              },
+            ],
           },
-        ],
-      },
-      k: {
-        to: [
-          {
-            key_code: "volume_increment",
+          k: {
+            to: [
+              {
+                key_code: "volume_increment",
+              },
+            ],
           },
-        ],
-      },
-      u: {
-        to: [
-          {
-            key_code: "display_brightness_decrement",
+          u: {
+            to: [
+              {
+                key_code: "display_brightness_decrement",
+              },
+            ],
           },
-        ],
-      },
-      i: {
-        to: [
-          {
-            key_code: "display_brightness_increment",
+          i: {
+            to: [
+              {
+                key_code: "display_brightness_increment",
+              },
+            ],
           },
-        ],
-      },
-      l: {
-        to: [
-          {
-            key_code: "q",
-            modifiers: ["right_control", "right_command"],
+          l: {
+            to: [
+              {
+                key_code: "q",
+                modifiers: ["control", "command"],
+              },
+            ],
           },
-        ],
-      },
-      // "D"o not disturb toggle
-      d: open(
-        `raycast://extensions/yakitrak/do-not-disturb/toggle?launchType=background`
-      ),
-      // "T"heme
-      c: open("raycast://extensions/raycast/system/open-camera"),
-      // Toggle the big clock
-      t: {
-        to: [
-          {
-            key_code: "0",
-            modifiers: ["right_option", "right_command"],
+          // "D"o not disturb toggle
+          d: open(
+            `raycast://extensions/yakitrak/do-not-disturb/toggle?launchType=background`
+          ),
+          // "T"heme
+          c: open("raycast://extensions/raycast/system/open-camera"),
+          // Toggle the big clock
+          t: {
+            to: [
+              {
+                key_code: "0",
+                modifiers: ["option", "command"],
+              },
+            ],
           },
-        ],
-      },
       // Clear notificaitons using Aliento
-      n: {
-        to: [
+          x: {
+            to: [
               {
                 key_code: "5",
                 modifiers: ["option", "command"],
               },
             ],
-          }
+          },
+          p: {
+            to: [{ key_code: "play_or_pause" }],
+          },
+          n: {
+            to: [{ key_code: "fastforward" }],
+          },
+          b: {
+            to: [{ key_code: "rewind" }],
+          },
+          1: open(
+            "raycast://extensions/VladCuciureanu/toothpick/toggle-favorite-device-1"
+          ),
+          2: open(
+            "raycast://extensions/VladCuciureanu/toothpick/toggle-favorite-device-2"
+          ),
+          3: open(
+            "raycast://extensions/VladCuciureanu/toothpick/toggle-favorite-device-3"
+          ),
+          hyphen: open(
+            "raycast://extensions/benvp/audio-device/set-input-device"),
+          equal_sign: open(
+            "raycast://extensions/benvp/audio-device/set-output-device"
+          ),
       },
 
+
+
+    return_or_enter: {
+      to: [{ pointing_button: "button1" }],
+    },
     // v = "moVe" which isn't "m" because we want it to be on the left hand
     // so that hjkl work like they do in vim
     h: {
@@ -346,14 +335,126 @@ const rules: KarabinerRules[] = [
       to: [{ key_code: "2", modifiers: ["option", "command"] }],
     },
     // activate whisprflow
-    v: {
+    i: {
       to: [{ key_code: "fn" }],
     },
-    d: {
-      to: [{ key_code: "page_down" }],
+    // d: {
+    //   to: [{ key_code: "page_down" }],
+    // },
+    // u: {
+    //   to: [{ key_code: "page_up" }],
+    // },
+    semicolon: {
+      "to": [{ key_code: "return_or_enter" }]
     },
-    u: {
-      to: [{ key_code: "page_up" }],
+    quote: {
+      to: [{ key_code: "equal_sign" }]
+    },
+    6: {
+      to: [{ key_code: "6", modifiers: ['shift'] }]
+    },
+    7: {
+      to: [{ key_code: "7", modifiers: ['shift'] }]
+    },
+    8: {
+      to: [{ key_code: "8", modifiers: ['shift'] }]
+    },
+    9: {
+      to: [{ key_code: "9", modifiers: ['shift'] }]
+    },
+    0: {
+      to: [{ key_code: "0", modifiers: ['shift'] }]
+    },
+    n: {
+      to: [{key_code: "delete_or_backspace",
+        modifiers: ["option"], }]
+    },
+    m: {
+      to: [{ key_code: 'delete_or_backspace' }]
+    },
+    comma: {
+      to: [{ key_code: 'd' , modifiers: ['control'] }]
+    },
+    period: {
+      to: [{ key_code: 'delete_forward', modifiers: ['control'] }]
+    },
+    z: {
+      to: [{ key_code: "z", modifiers: ["command"] }]
+    },
+    x: {
+      to: [{ key_code: "x", modifiers: ["command"] }]
+    },
+    c: {
+      to: [{ key_code: "c", modifiers: ["command"] }]
+    },
+    v: {
+      to: [{ key_code: "v", modifiers: ["command"] }]
+    },
+    a: {
+      to: [{ key_code: "a", modifiers: ["command"] }]
+    },
+    y: {
+      to: [{ key_code: "z", modifiers: ["command", "shift"] }]
+    },
+    t: {
+      to: [{ key_code: "tab", modifiers: ["control"] }]
+    },
+    q: {
+      to: [{ key_code: "w", modifiers: ["command"] }]
+    },
+    open_bracket: {
+      description: "Window: Back",
+      to: [
+        {
+          key_code: "open_bracket",
+          modifiers: ["command"],
+        },
+      ],
+    },
+    close_bracket: {
+      description: "Window: Forward",
+      to: [
+        {
+          key_code: "close_bracket",
+          modifiers: ["command"],
+        },
+      ],
+    },
+    // jump words forward like in vim  
+    w: {
+        to: [
+          {
+            key_code: "right_arrow",
+            modifiers: ["option"],
+          },
+        ],
+    },
+    // jump words backward like in vim
+    b: {
+      to: [
+        {
+          key_code: "left_arrow",
+          modifiers: ["option"],
+        },
+      ], 
+    },
+    // jump to beginning of line like in vim
+    e: {
+      to: [
+        {
+          key_code: "left_arrow",
+          modifiers: ["command"],
+        },
+      ],
+    },
+    // jump to end of line like in vim
+    p: {
+      to: [
+        {
+          key_code: "right_arrow",
+          modifiers: ["command"],
+        },
+      ],
     },
 
 
@@ -383,106 +484,106 @@ const rules: KarabinerRules[] = [
     ],
   },
   // Additional rule for custom deletion and navigation mappings
-  {
-    description:
-      "Custom Ctrl and Cmd Keybindings for Word and Line Deletion/Navigation",
-    manipulators: [
-      // Cmd + Backspace for word deletion
-      {
-        type: "basic",
-        from: {
-          key_code: "delete_or_backspace",
-          modifiers: {
-            mandatory: ["command"],
-          },
-        },
-        to: [
-          {
-            key_code: "delete_or_backspace",
-            modifiers: ["option"],
-          },
-        ],
-      },
-      // Cmd + Arrow for word navigation
-      {
-        type: "basic",
-        from: {
-          key_code: "left_arrow",
-          modifiers: {
-            mandatory: ["command"],
-          },
-        },
-        to: [
-          {
-            key_code: "left_arrow",
-            modifiers: ["option"],
-          },
-        ],
-      },
-      {
-        type: "basic",
-        from: {
-          key_code: "right_arrow",
-          modifiers: {
-            mandatory: ["command"],
-          },
-        },
-        to: [
-          {
-            key_code: "right_arrow",
-            modifiers: ["option"],
-          },
-        ],
-      },
-      // Option + Backspace for deleting the entire line
-      {
-        type: "basic",
-        from: {
-          key_code: "delete_or_backspace",
-          modifiers: {
-            mandatory: ["option"],
-          },
-        },
-        to: [
-          {
-            key_code: "delete_or_backspace",
-            modifiers: ["command"],
-          },
-        ],
-      },
-      // Option + Arrow for moving to the beginning/end of the line
-      {
-        type: "basic",
-        from: {
-          key_code: "left_arrow",
-          modifiers: {
-            mandatory: ["option"],
-          },
-        },
-        to: [
-          {
-            key_code: "left_arrow",
-            modifiers: ["command"],
-          },
-        ],
-      },
-      {
-        type: "basic",
-        from: {
-          key_code: "right_arrow",
-          modifiers: {
-            mandatory: ["option"],
-          },
-        },
-        to: [
-          {
-            key_code: "right_arrow",
-            modifiers: ["command"],
-          },
-        ],
-      },
-    ],
-  },
+  // {
+  //   description:
+  //     "Custom Ctrl and Cmd Keybindings for Word and Line Deletion/Navigation",
+  //   manipulators: [
+  //     // Cmd + Backspace for word deletion
+  //     {
+  //       type: "basic",
+  //       from: {
+  //         key_code: "delete_or_backspace",
+  //         modifiers: {
+  //           mandatory: ["command"],
+  //         },
+  //       },
+  //       to: [
+  //         {
+  //           key_code: "delete_or_backspace",
+  //           modifiers: ["option"],
+  //         },
+  //       ],
+  //     },
+  //     // Cmd + Arrow for word navigation
+  //     {
+  //       type: "basic",
+  //       from: {
+  //         key_code: "left_arrow",
+  //         modifiers: {
+  //           mandatory: ["command"],
+  //         },
+  //       },
+  //       to: [
+  //         {
+  //           key_code: "left_arrow",
+  //           modifiers: ["option"],
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       type: "basic",
+  //       from: {
+  //         key_code: "right_arrow",
+  //         modifiers: {
+  //           mandatory: ["command"],
+  //         },
+  //       },
+  //       to: [
+  //         {
+  //           key_code: "right_arrow",
+  //           modifiers: ["option"],
+  //         },
+  //       ],
+  //     },
+  //     // Option + Backspace for deleting the entire line
+  //     {
+  //       type: "basic",
+  //       from: {
+  //         key_code: "delete_or_backspace",
+  //         modifiers: {
+  //           mandatory: ["option"],
+  //         },
+  //       },
+  //       to: [
+  //         {
+  //           key_code: "delete_or_backspace",
+  //           modifiers: ["command"],
+  //         },
+  //       ],
+  //     },
+  //     // Option + Arrow for moving to the beginning/end of the line
+  //     {
+  //       type: "basic",
+  //       from: {
+  //         key_code: "left_arrow",
+  //         modifiers: {
+  //           mandatory: ["option"],
+  //         },
+  //       },
+  //       to: [
+  //         {
+  //           key_code: "left_arrow",
+  //           modifiers: ["command"],
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       type: "basic",
+  //       from: {
+  //         key_code: "right_arrow",
+  //         modifiers: {
+  //           mandatory: ["option"],
+  //         },
+  //       },
+  //       to: [
+  //         {
+  //           key_code: "right_arrow",
+  //           modifiers: ["command"],
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // }
 ];
 
 fs.writeFileSync(
@@ -497,6 +598,10 @@ fs.writeFileSync(
           name: "Default",
           complex_modifications: {
             rules,
+          },
+          simple_modifications: {
+            "return_or_enter": "out",
+            "delete_or_backspace": "out",
           },
           devices: [
             {
