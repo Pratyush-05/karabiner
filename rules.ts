@@ -56,17 +56,7 @@ const rules: KarabinerRules[] = [
     ],
   },
   ...createHyperSubLayers({
-    f: {
-      // Magicmove via contexts.app
-      to: [{ key_code: "9", modifiers: ["option", "command"] }],
-      // TODO: Trigger Vim Easymotion when VSCode is focused
-    },
 
-
-    spacebar: 
-    {
-      to: [{ key_code: "1", modifiers: ["option", "command"] }],
-    },
     // b = "B"rowse
     slash: {
       t: open("https://twitter.com"),
@@ -330,7 +320,17 @@ const rules: KarabinerRules[] = [
           },
       },
 
+    f: {
+      // Magicmove via contexts.app
+      to: [{ key_code: "9", modifiers: ["option", "command"] }],
+      // TODO: Trigger Vim Easymotion when VSCode is focused
+    },
 
+
+    spacebar: 
+    {
+      to: [{ key_code: "1", modifiers: ["option", "command"] }],
+    },
 
     return_or_enter: {
       to: [{ pointing_button: "button1" }],
@@ -354,7 +354,7 @@ const rules: KarabinerRules[] = [
       to: [{ key_code: "2", modifiers: ["option", "command"] }],
     },
     // activate whisprflow
-    i: {
+    tab: {
       to: [{ key_code: "fn" }],
     },
     // d: {
@@ -458,7 +458,7 @@ const rules: KarabinerRules[] = [
       ], 
     },
     // jump to beginning of line like in vim
-    e: {
+    u: {
       to: [
         {
           key_code: "left_arrow",
@@ -467,7 +467,7 @@ const rules: KarabinerRules[] = [
       ],
     },
     // jump to end of line like in vim
-    p: {
+    i: {
       to: [
         {
           key_code: "right_arrow",
