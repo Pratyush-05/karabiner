@@ -62,7 +62,7 @@ const rules: KarabinerRules[] = [
       t: open("https://twitter.com"),
       r: open("https://reddit.com"),
       g: open("https://maps.google.com/maps"),
-      l: open("https://linkedin.com"),
+      l: open("https://www.linkedin.com/feed/"),
       o: open(
         "https://docs.google.com/spreadsheets/d/1gMXdxxK_eYl-ybl16Vg3euAdQz_jKqfI-iMLOgXo_Kg/edit?pli=1&gid=908160810#gid=908160810"
       ),
@@ -70,6 +70,7 @@ const rules: KarabinerRules[] = [
         "https://docs.google.com/spreadsheets/d/1KtKigalWTAk6HKon0aKDogO_l8uySfSE2WeHfpFLdMw/edit?gid=0#gid=0"
       ),
       y: open("https://www.youtube.com/"),
+      c:open("https://leetcode.com/problemset/"),
       a: open("https://mail.google.com/mail/u/0"), //profiesta98
       s: open("https://mail.google.com/mail/u/1"), //purohit.pratyush05@gmail.com
       d: open("https://mail.google.com/mail/u/2"), //we.theoddball@gmail.com
@@ -99,6 +100,7 @@ const rules: KarabinerRules[] = [
       g: app("ChatGPT"),
       p: app("perplexity"),
       e: app("Claude"),
+      i: app("iPhone Mirroring")
     },
 
     //ask layer
@@ -147,6 +149,24 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
+      open_bracket: {
+      description: "Window: Back",
+      to: [
+        {
+          key_code: "open_bracket",
+          modifiers: ["command"],
+        },
+      ],
+    },
+    close_bracket: {
+      description: "Window: Forward",
+      to: [
+        {
+          key_code: "close_bracket",
+          modifiers: ["command"],
+        },
+      ],
+    },
       // u: {
       //   description: "window: Previous Tab",
       //   to: [
@@ -327,10 +347,10 @@ const rules: KarabinerRules[] = [
     },
 
 
-    spacebar: 
-    {
-      to: [{ key_code: "1", modifiers: ["option", "command"] }],
-    },
+    // spacebar: 
+    // {
+    //   to: [{ key_code: "1", modifiers: ["option", "command"] }],
+    // },
 
     return_or_enter: {
       to: [{ pointing_button: "button1" }],
@@ -355,7 +375,10 @@ const rules: KarabinerRules[] = [
     },
     // activate whisprflow
     tab: {
-      to: [{ key_code: "fn" }],
+      to: [{ key_code: "1", modifiers: ["shift", "command"]}],
+    },
+    grave_accent_and_tilde: {
+      to: [{ key_code: "caps_lock" }],
     },
     // d: {
     //   to: [{ key_code: "page_down" }],
@@ -369,21 +392,27 @@ const rules: KarabinerRules[] = [
     quote: {
       to: [{ key_code: "equal_sign" }]
     },
-    6: {
-      to: [{ key_code: "6", modifiers: ['shift'] }]
-    },
-    7: {
-      to: [{ key_code: "7", modifiers: ['shift'] }]
-    },
-    8: {
-      to: [{ key_code: "8", modifiers: ['shift'] }]
-    },
-    9: {
-      to: [{ key_code: "9", modifiers: ['shift'] }]
-    },
-    0: {
-      to: [{ key_code: "0", modifiers: ['shift'] }]
-    },
+    // 6: {
+    //   to: [{ key_code: "6", modifiers: ['shift'] }]
+    // },
+    // 7: {
+    //   to: [{ key_code: "7", modifiers: ['shift'] }]
+    // },
+    // 8: {
+    //   to: [{ key_code: "8", modifiers: ['shift'] }]
+    // },
+    // 9: {
+    //   to: [{ key_code: "9", modifiers: ['shift'] }]
+    // },
+    // 0: {
+    //   to: [{ key_code: "0", modifiers: ['shift'] }]
+    // },
+    // hyphen: {
+    //   to: [{ key_code: "hyphen", modifiers: ['shift'] }]
+    // },
+    // equal_sign: {
+    //   to: [{ key_code: "equal_sign", modifiers: ['shift'] }]
+    // },
     n: {
       to: [{key_code: "delete_or_backspace",
         modifiers: ["option"], }]
@@ -421,24 +450,7 @@ const rules: KarabinerRules[] = [
     q: {
       to: [{ key_code: "w", modifiers: ["command"] }]
     },
-    open_bracket: {
-      description: "Window: Back",
-      to: [
-        {
-          key_code: "open_bracket",
-          modifiers: ["command"],
-        },
-      ],
-    },
-    close_bracket: {
-      description: "Window: Forward",
-      to: [
-        {
-          key_code: "close_bracket",
-          modifiers: ["command"],
-        },
-      ],
-    },
+
     // jump words forward like in vim  
     w: {
         to: [
@@ -475,8 +487,14 @@ const rules: KarabinerRules[] = [
         },
       ],
     },
-
-
+    e: {
+      to: [
+        {
+          key_code: "2",
+          modifiers: ["command","control" ,"option"],
+        },
+      ],
+    },
   }),
   {
     description: "Change Backspace to Spacebar when Minecraft is focused",
@@ -619,8 +637,9 @@ fs.writeFileSync(
             rules,
           },
           simple_modifications: {
-            "return_or_enter": "out",
-            "delete_or_backspace": "out",
+            // "return_or_enter": "out",
+            // "delete_or_backspace": "out",
+            
           },
           devices: [
             {
@@ -640,7 +659,7 @@ fs.writeFileSync(
                     },
                     {
                       "from": { "key_code": "right_option" },
-                      "to": [{ "key_code": "right_command" }]
+                      "to": [{ "key_code": "fn" }]
                     },
                 ]
             }
