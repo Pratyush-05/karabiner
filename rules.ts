@@ -100,7 +100,10 @@ const rules: KarabinerRules[] = [
       g: app("ChatGPT"),
       p: app("perplexity"),
       e: app("Claude"),
-      i: app("iPhone Mirroring")
+      i: app("iPhone Mirroring"),
+      k: {
+        to: [{ key_code: "0", modifiers: ["shift", "option", "command"] }],
+      },
     },
 
     //ask layer
@@ -233,6 +236,9 @@ const rules: KarabinerRules[] = [
       y: open("raycast://extensions/raycast/calendar/my-schedule"),
       // journal
       j: open("raycast://extensions/KevinBatdorf/obsidian/dailyNoteCommand"),
+      k:  {
+        to: [{ key_code: "1", modifiers: ["shift", "option", "command"] }],
+      },
     },
     // s = "System"
     s: {
@@ -355,7 +361,10 @@ const rules: KarabinerRules[] = [
     return_or_enter: {
       to: [{ pointing_button: "button1" }],
     },
-    // v = "moVe" which isn't "m" because we want it to be on the left hand
+    backslash:{
+      to: [{pointing_button: "button2"}],
+    },
+        // v = "moVe" which isn't "m" because we want it to be on the left hand
     // so that hjkl work like they do in vim
     h: {
       to: [{ key_code: "left_arrow" }],
