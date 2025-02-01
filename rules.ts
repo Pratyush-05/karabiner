@@ -99,7 +99,7 @@ const rules: KarabinerRules[] = [
       },
       g: app("ChatGPT"),
       p: app("perplexity"),
-      e: app("Claude"),
+      e: app("Eclipse"),
       i: app("iPhone Mirroring"),
       k: {
         to: [{ key_code: "0", modifiers: ["shift", "option", "command"] }],
@@ -353,10 +353,10 @@ const rules: KarabinerRules[] = [
     },
 
 
-    // spacebar: 
-    // {
-    //   to: [{ key_code: "1", modifiers: ["option", "command"] }],
-    // },
+    spacebar: 
+    {
+      to: [{ key_code: "spacebar", modifiers: ["shift", "command"] }],
+    },
 
     return_or_enter: {
       to: [{ pointing_button: "button1" }],
